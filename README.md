@@ -1,14 +1,8 @@
-# **Personal Blogging Platform API**  
-
-📖 The **Personal Blogging Platform API** is a RESTful API built with **Node.js**, **TypeScript**, **Express.js** and **MongoDB**.  
-
-It allows create, retrieve, update and delete articles from a personal blog, providing advanced filters with tags and publication dates.  
-
----
+# **Service Platform API**  
 
 ## 📌 **Features**
-✅ **CRUD Operations** → Create, Read, Update, and Delete blog articles.  
-✅ **Filtering & Searching** → Retrieve articles by tags and publish date.  
+✅ **CRUD Operations** → Create, Read, Update, and Delete blog publishers.  
+✅ **Filtering & Searching** → Retrieve publishers by tags and publish date.  
 ✅ **RESTful Architecture** → Clean and scalable API design.  
 ✅ **MongoDB Database** → NoSQL database for flexible data storage.  
 ✅ **TypeScript Support** → Ensures type safety and maintainability.  
@@ -32,7 +26,7 @@ It allows create, retrieve, update and delete articles from a personal blog, pro
 
 ### **1️⃣ Clone the Repository**
 ```sh
-git clone https://github.com/chaotzdud/personal-blog-api.git
+git clone https://github.com/chaotzdud/service-platform-api.git
 cd personal-blog-api
 ```
 
@@ -63,12 +57,10 @@ By default, the API will be running at:
 
 ## 📌 **API Endpoints**
 
-### **🔍 Retrieve All Articles**
+### **🔍 Retrieve All Publishers**
 ```http
-GET /api/articles
+GET /api/publishers
 ```
-🔹 Returns a list of all blog articles.  
-🔹 Supports filtering by **tags** and **publish date**.  
 
 #### **Example Response**
 ```json
@@ -85,17 +77,17 @@ GET /api/articles
 
 ---
 
-### **📌 Retrieve a Single Article**
+### **📌 Retrieve a Single Publisher**
 ```http
-GET /api/articles/:id
+GET /api/publishers/:id
 ```
 🔹 Retrieves a specific article by **ID**.
 
 ---
 
-### **📌 Create a New Article**
+### **📌 Create a New Publisher**
 ```http
-POST /api/articles
+POST /api/publishers
 ```
 🔹 Adds a new article to the database.  
 🔹 **Body Parameters (JSON)**:
@@ -109,9 +101,9 @@ POST /api/articles
 
 ---
 
-### **📌 Update an Existing Article**
+### **📌 Update an Existing Publisher**
 ```http
-PUT /api/articles/:id
+PUT /api/publishers/:id
 ```
 🔹 Updates an article's details.  
 🔹 **Body Parameters (JSON)**:
@@ -125,9 +117,9 @@ PUT /api/articles/:id
 
 ---
 
-### **📌 Delete an Article**
+### **📌 Delete an Publisher**
 ```http
-DELETE /api/articles/:id
+DELETE /api/publishers/:id
 ```
 🔹 Permanently deletes an article from the database.  
 
@@ -151,41 +143,19 @@ personal-blog-api/
 
 ---
 
-## 📦 **Installation & Deployment**
-### **📌 Build for Production**
-```sh
-npm run build
-```
-
-### **📌 Run in Production Mode**
-```sh
-npm start
-```
-
-### **📌 Deploy to a Cloud Platform (Optional)**
-- 🚀 **Railway**
-- 🚀 **Render**
-- 🚀 **Vercel**
-- 🚀 **AWS / DigitalOcean**  
-
----
-
 ## 🧪 **Testing**
 If you want to test the API locally, you can use:  
 📌 **Postman**, **Insomnia**, or **cURL**.  
 
 Example:
 ```sh
-curl -X GET http://localhost:5000/api/articles
+curl -X GET http://localhost:5000/api/publishers
 ```
 
 ---
 
 ## 🎯 **Future Improvements**
-- ✅ User authentication & JWT-based security.  
-- ✅ Image upload support for articles.  
-- ✅ Pagination for large datasets.  
-- ✅ Caching with Redis for performance boost.  
+
 
 ---
 

@@ -2,14 +2,15 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import connectDB from "./config/database";
-import articleRoutes from "./routes/articleRoutes";
+import publisherRoutes from "./routes/publisherRoutes";
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/articles", articleRoutes);
+app.use("/api/publishers", publisherRoutes);
+
 
 const PORT = process.env.PORT || 5000;
 
