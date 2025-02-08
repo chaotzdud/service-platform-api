@@ -30,7 +30,7 @@ export const createPublisher = async (req: Request, res: Response): Promise<void
     await newPublisher.save();
     res.status(201).json(newPublisher);
   } catch (error) {
-    res.status(500).json({ message: "Error when searching for publishers", error });
+    res.status(500).json({ message: "Error when creating for publishers", error });
   }
 };
 
@@ -54,7 +54,7 @@ export const deletePublisher = async (req: Request, res: Response): Promise<void
       res.status(404).json({ message: "Publisher not found" });
       return;
     }
-    res.json({ message: "Succesful publisher update" });
+    res.json({ message: "Succesful publisher delete" });
   } catch (error) {
     res.status(500).json({ message: "Error when deleting publisher", error });
   }
