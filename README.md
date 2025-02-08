@@ -1,9 +1,8 @@
-# **Service Platform API**  
+# **Bico - Freelancer & Service Platform API**
 
 ## 📌 **Features**
-✅ **CRUD Operations** → Create, Read, Update, and Delete blog publishers.  
-✅ **Filtering & Searching** → Retrieve publishers by tags and publish date.  
-✅ **RESTful Architecture** → Clean and scalable API design.  
+✅ **CRUD Operations** → Create, Read, Update, and Delete providers and service providers.   
+✅ **RESTful Architecture** → Clean, modular, and scalable API design.  
 ✅ **MongoDB Database** → NoSQL database for flexible data storage.  
 ✅ **TypeScript Support** → Ensures type safety and maintainability.  
 ✅ **Dotenv Configuration** → Secure environment variable management.  
@@ -27,7 +26,7 @@
 ### **1️⃣ Clone the Repository**
 ```sh
 git clone https://github.com/chaotzdud/service-platform-api.git
-cd personal-blog-api
+cd bico-platform-api
 ```
 
 ### **2️⃣ Install Dependencies**
@@ -57,87 +56,144 @@ By default, the API will be running at:
 
 ## 📌 **API Endpoints**
 
-### **🔍 Retrieve All Publishers**
+### **📌 Service Provider **
+
+#### **📌 Retrieve All Service Providers**
+```http
+GET /api/providers
+```
+
+---
+
+#### **📌 Retrieve a Single Service Provider**
+```http
+GET /api/providers/:id
+```
+🔹 Retrieves a specific service provider by **ID**.
+
+---
+
+#### **📌 Create a New Service Provider**
+```http
+POST /api/providers
+```
+🔹 Adds a new service provider to the platform.  
+🔹 **Body Parameters (JSON)**:
+```json
+{
+  "name": "Jane Doe",
+  "email": "jane.doe@example.com",
+  "phoneNumber": "987654321",
+  "password": "password123",
+  "cpf": "987.654.321-00",
+  "dateOfBirth": "1992-05-14",
+  "address": "456 Another St, City, Country",
+  "skills": ["cleaning", "gardening"]
+}
+```
+
+---
+
+#### **📌 Update an Existing Service Provider**
+```http
+PUT /api/providers/:id
+```
+🔹 Updates a service provider's details.  
+🔹 **Body Parameters (JSON)**:
+```json
+{
+  "name": "Jane Doe Updated",
+  "email": "jane.doe.updated@example.com",
+  "phoneNumber": "987654322",
+  "address": "789 New Location, City, Country"
+}
+```
+
+---
+
+#### **📌 Delete a Service Provider**
+```http
+DELETE /api/providers/:id
+```
+🔹 Permanently deletes a service provider from the platform.  
+
+---
+
+### **📌 Service Publisher **
+
+#### **📌 Retrieve All Service Publishers**
 ```http
 GET /api/publishers
 ```
 
-#### **Example Response**
-```json
-[
-  {
-    "_id": "65a5dcd7f4a2b3c4e8b12345",
-    "title": "Introduction to REST APIs",
-    "content": "A beginner-friendly guide to REST APIs...",
-    "tags": ["API", "REST", "Development"],
-    "publishedAt": "2025-01-10T14:32:00.000Z"
-  }
-]
-```
-
 ---
 
-### **📌 Retrieve a Single Publisher**
+#### **📌 Retrieve a Single Service Publisher**
 ```http
 GET /api/publishers/:id
 ```
-🔹 Retrieves a specific article by **ID**.
+🔹 Retrieves a specific service publisher by **ID**.
 
 ---
 
-### **📌 Create a New Publisher**
+#### **📌 Create a New Service Publisher**
 ```http
 POST /api/publishers
 ```
-🔹 Adds a new article to the database.  
+🔹 Adds a new service publisher to the platform.  
 🔹 **Body Parameters (JSON)**:
 ```json
 {
-  "title": "New Blog Post",
-  "content": "This is a new blog post about web development.",
-  "tags": ["JavaScript", "Node.js"]
+"name": "Eduarda",
+"email": "eduarda@gmail.com",
+"phoneNumber": "1234",
+"cpf": "1234",
+"dateOfBirth": "2004-08-06",
+"address": "R. Jorge da Silva",
+"ratings": 0
 }
 ```
 
 ---
 
-### **📌 Update an Existing Publisher**
+#### **📌 Update an Existing Service Publisher**
 ```http
 PUT /api/publishers/:id
 ```
-🔹 Updates an article's details.  
+🔹 Updates a service publisher's details.  
 🔹 **Body Parameters (JSON)**:
 ```json
 {
-  "title": "Updated Title",
-  "content": "This is the updated content.",
-  "tags": ["Updated", "Node.js"]
+  "name": "Eduarda Update",
+  "email": "eduardaupdate@gmail.com",
+  "phoneNumber": "5678",
+  "address": "New Location"
 }
 ```
 
 ---
 
-### **📌 Delete an Publisher**
+#### **📌 Delete a Service Publisher**
 ```http
 DELETE /api/publishers/:id
 ```
-🔹 Permanently deletes an article from the database.  
+🔹 Permanently deletes a service publisher from the platform.  
 
 ---
 
 ## 🛠 **Project Structure**
 ```
-personal-blog-api/
+service-platform-api/
 │── src/
-│   ├── routes/       # API routes
+│   ├── config/       # Configuration files (e.g., database.ts)
 │   ├── controllers/  # Business logic for API requests
 │   ├── models/       # MongoDB Schemas
-│   ├── config/       # Configuration files (e.g., database.ts)
-│   ├── middleware/   # Custom middlewares (authentication, logging, etc.)
-│   ├── index.ts      # Main entry point
+│   ├── routes/       # API routes
+│   ├── server.ts      # Main entry point
+│── package.json      # Project dependencies
 │── .env              # Environment variables
 │── .gitignore        # Ignore unnecessary files
-│── package.json      # Project dependencies
+│── LICENSE           # MIT License
 │── README.md         # API documentation
 ```
 
@@ -149,13 +205,16 @@ If you want to test the API locally, you can use:
 
 Example:
 ```sh
-curl -X GET http://localhost:5000/api/publishers
+curl -X GET http://localhost:5000/api/providers
 ```
 
 ---
 
 ## 🎯 **Future Improvements**
-
+- Implement user authentication (JWT, OAuth).
+- Add functionality for posting jobs/services (publisher side).
+- Introduce a rating and review system for both publishers and providers.
+- Enable geolocation-based search for nearby service providers.
 
 ---
 
@@ -180,5 +239,5 @@ This project is licensed under the **MIT License**.
 ## 📞 **Contact**
 For questions, feedback, or collaboration:  
 
-📧 **Email:** mariaeduarda.dudzz@gmail.com
-🐙 **GitHub:** [chaotzdud](https://github.com/chaotzdud)
+📧 **Email:** mariaeduarda.dudzz@gmail.com  
+🐙 **GitHub:** [chaotzdud](https://github.com/chaotzdud)  
