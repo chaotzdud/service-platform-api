@@ -56,7 +56,7 @@ By default, the API will be running at:
 
 ## 📌 **API Endpoints**
 
-### **📌 Service Provider **
+### **📌 Service Provider**
 
 #### **📌 Retrieve All Service Providers**
 ```http
@@ -119,7 +119,7 @@ DELETE /api/providers/:id
 
 ---
 
-### **📌 Service Publisher **
+### **📌 Service Publisher**
 
 #### **📌 Retrieve All Service Publishers**
 ```http
